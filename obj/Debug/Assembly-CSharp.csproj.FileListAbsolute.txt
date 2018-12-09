@@ -167,5 +167,3 @@ C:\Users\yahalom\.babun\cygwin\home\yahalom\projects\games\Outside-Alone\obj\Deb
 C:\Users\yahalom\.babun\cygwin\home\yahalom\projects\games\Outside-Alone\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\yahalom\.babun\cygwin\home\yahalom\projects\games\Outside-Alone\obj\Debug\Assembly-CSharp.dll
 C:\Users\yahalom\.babun\cygwin\home\yahalom\projects\games\Outside-Alone\obj\Debug\Assembly-CSharp.pdb
-C:\Users\yahalom\.babun\cygwin\home\yahalom\projects\games\Outside-Alone\Temp\bin\Debug\UnityEditor.UI.dll
-C:\Users\yahalom\.babun\cygwin\home\yahalom\projects\games\Outside-Alone\Temp\bin\Debug\UnityEditor.UI.xml
