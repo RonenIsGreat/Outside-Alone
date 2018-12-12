@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RayCastScript : MonoBehaviour {
+public class RocksScript : MonoBehaviour {
 
-    public Text CollectRockText;
+    public Text PickupRockText;
     public Image Crosshair;
     public Text RocksNumberText;
     public int DistanceToSee = 3;
@@ -27,12 +27,14 @@ public class RayCastScript : MonoBehaviour {
         RaycastHit hit;
         Color colorForCrossHair = originalCrosshairColor;
         int RayCastlayerMask = 1 << layerNumber;
+        Color displayPickupRockTextColor = Color.clear;
 
         if (Physics.Raycast(transform.position, transform.forward , out hit, DistanceToSee, RayCastlayerMask))
         {
             if (hit.collider.CompareTag("CollectableRock"))
             {
-                colorForCrossHair = Color.green;
+                colorForCrossHair = Color.yellow;
+                displayPickupRockTextColor = Color.yellow;
                 GameObject rock = hit.collider.gameObject;
 
                 // Check if player can collect more rocks
@@ -49,5 +51,6 @@ public class RayCastScript : MonoBehaviour {
         }
 
         Crosshair.color = colorForCrossHair;
+        PickupRockText.color = displayPickupRockTextColor;
     }
 }
