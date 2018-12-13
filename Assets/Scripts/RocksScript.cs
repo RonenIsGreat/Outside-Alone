@@ -8,8 +8,10 @@ public class RocksScript : MonoBehaviour {
     public Text PickupRockText;
     public Image Crosshair;
     public Text RocksNumberText;
+    public Rigidbody throwingRockPrefab;
     public int DistanceToSee = 3;
     public int maxRocksToCollect = 5;
+    public int ThrowForce = 1200;
 
     private Color originalCrosshairColor;
     private int layerNumber;
@@ -19,19 +21,25 @@ public class RocksScript : MonoBehaviour {
 	void Start () {
         originalCrosshairColor = Crosshair.color;
         layerNumber = 8;
-        collectedRocksNumber = 0;
+        collectedRocksNumber = 100;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        pickupRock();
+        throwRock();
+    }
+
+    private void pickupRock()
+    {
         RaycastHit hit;
         Color colorForCrossHair = originalCrosshairColor;
         int RayCastlayerMask = 1 << layerNumber;
         Color displayPickupRockTextColor = Color.clear;
 
-        if (Physics.Raycast(transform.position, transform.forward , out hit, DistanceToSee, RayCastlayerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, DistanceToSee, RayCastlayerMask))
         {
-            if (hit.collider.CompareTag("CollectableRock"))
+            if (hit.collider.CompareTag("Rock"))
             {
                 colorForCrossHair = Color.yellow;
                 displayPickupRockTextColor = Color.yellow;
@@ -43,8 +51,7 @@ public class RocksScript : MonoBehaviour {
                     if (Input.GetKeyDown("e"))
                     {
                         Destroy(rock);
-                        collectedRocksNumber++;
-                        RocksNumberText.text = collectedRocksNumber.ToString();
+                        increaseRocksNumber();
                     }
                 }
             }
@@ -52,5 +59,28 @@ public class RocksScript : MonoBehaviour {
 
         Crosshair.color = colorForCrossHair;
         PickupRockText.color = displayPickupRockTextColor;
+    }
+
+    private void throwRock()
+    {
+        if(collectedRocksNumber > 0 && Input.GetMouseButtonDown(0))
+        {
+            Rigidbody rockInstance;
+            rockInstance = Instantiate(throwingRockPrefab, transform.position, throwingRockPrefab.rotation) as Rigidbody;
+            rockInstance.AddForce(transform.forward * ThrowForce);
+            decreaseRocksNumber();
+        }
+    }
+
+    private void increaseRocksNumber()
+    {
+        collectedRocksNumber++;
+        RocksNumberText.text = collectedRocksNumber.ToString();
+    }
+
+    private void decreaseRocksNumber()
+    {
+        collectedRocksNumber--;
+        RocksNumberText.text = collectedRocksNumber.ToString();
     }
 }
