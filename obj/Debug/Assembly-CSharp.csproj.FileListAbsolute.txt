@@ -507,3 +507,5 @@ D:\WorkSpace\Outside Alone\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.ca
 D:\WorkSpace\Outside Alone\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\WorkSpace\Outside Alone\obj\Debug\Assembly-CSharp.dll
 D:\WorkSpace\Outside Alone\obj\Debug\Assembly-CSharp.pdb
+D:\WorkSpace\Outside Alone\Temp\bin\Debug\UnityEditor.UI.dll
+D:\WorkSpace\Outside Alone\Temp\bin\Debug\UnityEditor.UI.xml

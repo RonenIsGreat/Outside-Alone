@@ -21,7 +21,7 @@ public class RocksScript : MonoBehaviour {
 	void Start () {
         originalCrosshairColor = Crosshair.color;
         layerNumber = 8;
-        collectedRocksNumber = 100;
+        collectedRocksNumber = 0;
     }
 	
 	// Update is called once per frame
