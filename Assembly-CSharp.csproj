@@ -64,7 +64,9 @@
     <Compile Include="Assets\Scripts\BehaviorScript.cs" />
     <Compile Include="Assets\Scripts\FloatingTextScript.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
-    <Compile Include="Assets\Scripts\RocksScript.cs" />
+    <Compile Include="Assets\Scripts\RockScript.cs" />
+    <Compile Include="Assets\Scripts\RockThrowingScript.cs" />
+    <Compile Include="Assets\Scripts\TargetScript.cs" />
     <Compile Include="Assets\Scripts\WayPointController.cs" />
     <None Include="Assets\MedievalTownExteriors\Readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
