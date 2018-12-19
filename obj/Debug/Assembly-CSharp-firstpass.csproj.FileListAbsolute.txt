@@ -334,8 +334,6 @@ D:\WorkSpace\Outside-Alone\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompil
 D:\WorkSpace\Outside-Alone\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
 D:\WorkSpace\Outside-Alone\obj\Debug\Assembly-CSharp-firstpass.dll
 D:\WorkSpace\Outside-Alone\obj\Debug\Assembly-CSharp-firstpass.pdb
-D:\WorkSpace\Outside-Alone\Temp\bin\Debug\UnityEditor.UI.dll
-D:\WorkSpace\Outside-Alone\Temp\bin\Debug\UnityEditor.UI.xml
 D:\WorkSpace\Outside Alone\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
 D:\WorkSpace\Outside Alone\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 D:\WorkSpace\Outside Alone\Temp\bin\Debug\Boo.Lang.dll
@@ -506,3 +504,5 @@ D:\WorkSpace\Outside Alone\obj\Debug\Assembly-CSharp-firstpass.dll
 D:\WorkSpace\Outside Alone\obj\Debug\Assembly-CSharp-firstpass.pdb
 D:\WorkSpace\Outside Alone\Temp\bin\Debug\UnityEditor.UI.dll
 D:\WorkSpace\Outside Alone\Temp\bin\Debug\UnityEditor.UI.xml
+D:\WorkSpace\Outside-Alone\Temp\bin\Debug\UnityEditor.UI.dll
+D:\WorkSpace\Outside-Alone\Temp\bin\Debug\UnityEditor.UI.xml

@@ -28,7 +28,6 @@ public class RockThrowingScript : MonoBehaviour {
 	void Update () {
         pickupRock();
         throwRock();
-        Debug.Log(transform.forward);
     }
 
     private void pickupRock()

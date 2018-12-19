@@ -15,4 +15,14 @@ public class TargetScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void DealDamage(float damage)
+    {
+        Health -= damage;
+
+        if (Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
