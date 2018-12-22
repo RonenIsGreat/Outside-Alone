@@ -9,9 +9,10 @@ public class RockThrowingScript : MonoBehaviour {
     public Image Crosshair;
     public Text RocksNumberText;
     public Rigidbody throwingRockPrefab;
-    public int DistanceToSee = 3;
+    public int DistanceToCollectRockFrom = 3;
     public int maxRocksToCollect = 5;
     public int ThrowForce = 1200;
+    public bool UnlimitedRocks = false;
 
     private Color originalCrosshairColor;
     private int layerNumber;
@@ -37,7 +38,7 @@ public class RockThrowingScript : MonoBehaviour {
         int RayCastlayerMask = 1 << layerNumber;
         Color displayPickupRockTextColor = Color.clear;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, DistanceToSee, RayCastlayerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, DistanceToCollectRockFrom, RayCastlayerMask))
         {
             if (hit.collider.CompareTag("Rock"))
             {
@@ -80,7 +81,10 @@ public class RockThrowingScript : MonoBehaviour {
 
     private void decreaseRocksNumber()
     {
-        collectedRocksNumber--;
-        RocksNumberText.text = collectedRocksNumber.ToString();
+        if (!UnlimitedRocks)
+        {
+            collectedRocksNumber--;
+            RocksNumberText.text = collectedRocksNumber.ToString();
+        }
     }
 }
