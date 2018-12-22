@@ -81,10 +81,13 @@ public class RockThrowingScript : MonoBehaviour {
 
     private void decreaseRocksNumber()
     {
-        if (!UnlimitedRocks)
+        collectedRocksNumber--;
+
+        if (UnlimitedRocks && collectedRocksNumber <= 0)
         {
-            collectedRocksNumber--;
-            RocksNumberText.text = collectedRocksNumber.ToString();
+            collectedRocksNumber = 99;
         }
+
+        RocksNumberText.text = collectedRocksNumber.ToString();
     }
 }
