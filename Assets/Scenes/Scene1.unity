@@ -569,30 +569,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 90731625}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &112090297 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1101285960}
---- !u!114 &112090302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 112090297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb72c770ebfcc7f45a8968c54464f10b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PickupRockText: {fileID: 1451360711}
-  Crosshair: {fileID: 1447168390}
-  RocksNumberText: {fileID: 652852910}
-  throwingRockPrefab: {fileID: 54555959770980090, guid: ada2c20cfe2f6004f999cf77beca5b72,
-    type: 2}
-  DistanceToCollectRockFrom: 3
-  maxRocksToCollect: 5
-  ThrowForce: 1200
 --- !u!1001 &117736743
 Prefab:
   m_ObjectHideFlags: 0
@@ -3595,7 +3571,7 @@ Transform:
   m_PrefabInternal: {fileID: 805534455}
 --- !u!114 &652852910 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114463844387117464, guid: 8b4df3fa406aee143beda0dc0c6e2da3,
+  m_CorrespondingSourceObject: {fileID: 114763927668130882, guid: 8b4df3fa406aee143beda0dc0c6e2da3,
     type: 2}
   m_PrefabInternal: {fileID: 2091273141}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -5616,6 +5592,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 928346888}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &932670921 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114463844387117464, guid: 8b4df3fa406aee143beda0dc0c6e2da3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2091273141}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &936172873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 459204, guid: b2e054983935ebc4c959a2513ac649dc,
@@ -6752,44 +6734,60 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+    - target: {fileID: 4664453296116998, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.51
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+    - target: {fileID: 4664453296116998, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1.48
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+    - target: {fileID: 4664453296116998, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
       propertyPath: m_LocalPosition.z
       value: -37.51
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+    - target: {fileID: 4664453296116998, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+    - target: {fileID: 4664453296116998, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+    - target: {fileID: 4664453296116998, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+    - target: {fileID: 4664453296116998, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+    - target: {fileID: 4664453296116998, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
+    - target: {fileID: 114457566685163842, guid: 35769a82956d4284ca8ccf9d10c84deb,
+        type: 2}
+      propertyPath: PickupRockText
+      value: 
+      objectReference: {fileID: 1451360711}
+    - target: {fileID: 114457566685163842, guid: 35769a82956d4284ca8ccf9d10c84deb,
+        type: 2}
+      propertyPath: Crosshair
+      value: 
+      objectReference: {fileID: 1447168390}
+    - target: {fileID: 114457566685163842, guid: 35769a82956d4284ca8ccf9d10c84deb,
+        type: 2}
+      propertyPath: RocksNumberText
+      value: 
+      objectReference: {fileID: 652852910}
+    - target: {fileID: 114834795668410760, guid: 35769a82956d4284ca8ccf9d10c84deb,
+        type: 2}
+      propertyPath: HealthNumberText
+      value: 
+      objectReference: {fileID: 932670921}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1106348985
 Prefab:
@@ -9541,7 +9539,7 @@ Prefab:
   m_IsPrefabAsset: 0
 --- !u!4 &1488974513 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+  m_CorrespondingSourceObject: {fileID: 4664453296116998, guid: 35769a82956d4284ca8ccf9d10c84deb,
     type: 2}
   m_PrefabInternal: {fileID: 1101285960}
 --- !u!1001 &1498515543
