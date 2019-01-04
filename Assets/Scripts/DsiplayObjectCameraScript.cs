@@ -18,11 +18,14 @@ public class DsiplayObjectCameraScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        offset = transform.position - targetObject.transform.position;
-        mainCamera = mainCameraObject.GetComponent<Camera>();
-        displayCamera = GetComponent<Camera>();
-        walkScript = playerControllerObject.GetComponent<FirstPersonController>();
-        StartCoroutine(removeText());
+        if(targetObject != null)
+        {
+            offset = transform.position - targetObject.transform.position;
+            mainCamera = mainCameraObject.GetComponent<Camera>();
+            displayCamera = GetComponent<Camera>();
+            walkScript = playerControllerObject.GetComponent<FirstPersonController>();
+            StartCoroutine(removeText());
+        }
     }
 
     private IEnumerator removeText()
@@ -34,20 +37,23 @@ public class DsiplayObjectCameraScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        transform.position = targetObject.transform.position + offset;
+        if (targetObject != null)
+        {
+            transform.position = targetObject.transform.position + offset;
 
-        if (Input.GetKey(KeyCode.T))
-        {
-            mainCamera.enabled = false;
-            displayCamera.enabled = true;
-            walkScript.enabled = false;
-            DisplayTargetText.enabled = false;
-        }
-        else
-        {
-            mainCamera.enabled = true;
-            displayCamera.enabled = false;
-            walkScript.enabled = true;
+            if (Input.GetKey(KeyCode.T))
+            {
+                mainCamera.enabled = false;
+                displayCamera.enabled = true;
+                walkScript.enabled = false;
+                DisplayTargetText.enabled = false;
+            }
+            else
+            {
+                mainCamera.enabled = true;
+                displayCamera.enabled = false;
+                walkScript.enabled = true;
+            }
         }
     }
 }

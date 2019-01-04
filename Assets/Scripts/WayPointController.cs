@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WayPointController : MonoBehaviour {
     public List<Transform> waypoints = new List<Transform>();
@@ -10,50 +11,42 @@ public class WayPointController : MonoBehaviour {
     // Define minimum distance of enemy from waypoint
     private float minDistance = 0.1f;
     private int lastWaypointIndex;
-
-    private float movementSpeed = 3.0f;
-    private float rotationSpeed = 2.0f;
+    private NavMeshAgent agent;
 
     // Use this for initialization
     void Start () {
         lastWaypointIndex = waypoints.Count - 1;
         // Start going to the first waypoint
         targetWaypoint = waypoints[targetWaypointIndex];
-	}
+        agent = GetComponent<NavMeshAgent>();
+        agent.destination = targetWaypoint.position;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        float movementStep = movementSpeed * Time.deltaTime;
-        float rotationStep = rotationSpeed * Time.deltaTime;
-
-        Vector3 directionToTarget = targetWaypoint.position - transform.position;
-        // check the rotation needed in order to get to that direction to target
-        Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
-
-        transform.rotation = Quaternion.Slerp(transform.rotation,rotationToTarget,rotationStep);
-
-        // distance between enemt and target waypoint
-        float distance = Vector3.Distance(transform.position,targetWaypoint.position);
-        CheckDistanceToWayPoint(distance);
-        // Move to next waypoint
-        transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, movementStep);
-	}
-
-    void CheckDistanceToWayPoint(float currentDistance)
-    {
-        if (currentDistance <= minDistance)
-        {
-            targetWaypointIndex++;
-            UpdateTargetWayPoint();
-        }
+        if (!agent.pathPending && (agent.remainingDistance < minDistance))
+            GotoNextPoint();
     }
 
     void UpdateTargetWayPoint()
     {
+        targetWaypointIndex++;
+
         if (targetWaypointIndex > lastWaypointIndex)
         {
             targetWaypointIndex = 0;
         }
         targetWaypoint = waypoints[targetWaypointIndex];
     }
+
+    void GotoNextPoint()
+    {
+        // Returns if no points have been set up
+        if (waypoints.Count == 0)
+            return;
+
+        UpdateTargetWayPoint();
+        agent.destination = targetWaypoint.position;
+    }
+
 }
