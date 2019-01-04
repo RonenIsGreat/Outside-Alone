@@ -2065,7 +2065,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4248347817428556, guid: e19e17219bd517044a5e000ceddcc0d9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.026000023
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4248347817428556, guid: e19e17219bd517044a5e000ceddcc0d9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -14540,6 +14540,8 @@ MonoBehaviour:
   - {fileID: 779278084}
   - {fileID: 26156875}
   - {fileID: 799996850}
+  player: {fileID: 1488974513}
+  distanceToSee: 10
 --- !u!1001 &2091273141
 Prefab:
   m_ObjectHideFlags: 0
