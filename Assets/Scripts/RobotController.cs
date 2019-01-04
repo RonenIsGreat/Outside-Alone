@@ -58,8 +58,7 @@ public class RobotController : MonoBehaviour {
         // loading tutorial scene if player got to the arrow
         if (col.CompareTag("Finish"))
         {
-            Debug.Log("Next scene is tutorial");
-            //SceneManager.LoadScene(2);
+            SceneManager.LoadScene(2);
         }
     }
 
