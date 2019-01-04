@@ -16,7 +16,7 @@ public class TargetScript : MonoBehaviour {
 		
 	}
 
-    public void DealDamage(float damage)
+    public void GetDamage(float damage)
     {
         Health -= damage;
 

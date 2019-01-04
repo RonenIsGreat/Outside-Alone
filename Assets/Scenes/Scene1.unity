@@ -2116,8 +2116,24 @@ Prefab:
       propertyPath: m_BaseOffset
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 195582809819582832, guid: e19e17219bd517044a5e000ceddcc0d9,
+        type: 2}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195582809819582832, guid: e19e17219bd517044a5e000ceddcc0d9,
+        type: 2}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195582809819582832, guid: e19e17219bd517044a5e000ceddcc0d9,
+        type: 2}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 95365846273176320, guid: e19e17219bd517044a5e000ceddcc0d9, type: 2}
+    - {fileID: 114724770380970588, guid: e19e17219bd517044a5e000ceddcc0d9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: e19e17219bd517044a5e000ceddcc0d9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &365312453
@@ -14508,6 +14524,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2084662361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2084662359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ef76b1ee937ed47b9974d11684bfec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 758358395}
+  - {fileID: 779278084}
+  - {fileID: 26156875}
+  - {fileID: 799996850}
 --- !u!1001 &2091273141
 Prefab:
   m_ObjectHideFlags: 0

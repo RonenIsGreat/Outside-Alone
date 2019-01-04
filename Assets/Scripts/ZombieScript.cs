@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WayPointController : MonoBehaviour {
+public class ZombieScript : MonoBehaviour {
     public List<Transform> waypoints = new List<Transform>();
     // The waypoint currently targeted
     private Transform targetWaypoint;
@@ -14,16 +14,18 @@ public class WayPointController : MonoBehaviour {
     private NavMeshAgent agent;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         lastWaypointIndex = waypoints.Count - 1;
         // Start going to the first waypoint
         targetWaypoint = waypoints[targetWaypointIndex];
         agent = GetComponent<NavMeshAgent>();
         agent.destination = targetWaypoint.position;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (!agent.pathPending && (agent.remainingDistance < minDistance))
             GotoNextPoint();
     }
@@ -48,5 +50,4 @@ public class WayPointController : MonoBehaviour {
         UpdateTargetWayPoint();
         agent.destination = targetWaypoint.position;
     }
-
 }

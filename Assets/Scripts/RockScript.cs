@@ -29,7 +29,7 @@ public class RockScript : MonoBehaviour {
         if (targetScript != null)
         {
             float dealingDamage = calculateDamage();
-            targetScript.DealDamage(dealingDamage);
+            targetScript.GetDamage(dealingDamage);
         }
     }
 
