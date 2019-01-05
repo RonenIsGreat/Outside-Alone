@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class RobotController : MonoBehaviour {
@@ -12,7 +13,7 @@ public class RobotController : MonoBehaviour {
     float groundRadius = 0.2f;
     public float jumpForce = 700f;
     public LayerMask groundLayer;
-
+    public Text dialogueText;
 
     Animator animator;
 
@@ -23,6 +24,10 @@ public class RobotController : MonoBehaviour {
 
     void FixedUpdate()
     {
+        if (dialogueText.IsActive())
+        {
+            return;
+        }
         // check if ground circle touch ground
         grounded = Physics2D.OverlapCircle(groundCheck.position,groundRadius,groundLayer);
 
@@ -45,6 +50,10 @@ public class RobotController : MonoBehaviour {
 
     void Update()
     {
+        if (dialogueText.IsActive())
+        {
+            return;
+        }
         if (grounded && Input.GetKeyUp(KeyCode.Space))
         {
             animator.SetBool("Ground",false);
