@@ -2136,6 +2136,11 @@ Prefab:
       propertyPath: m_Speed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 136625846910210756, guid: e19e17219bd517044a5e000ceddcc0d9,
+        type: 2}
+      propertyPath: m_Radius
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 95365846273176320, guid: e19e17219bd517044a5e000ceddcc0d9, type: 2}
     - {fileID: 114724770380970588, guid: e19e17219bd517044a5e000ceddcc0d9, type: 2}
@@ -7476,7 +7481,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114834795668410760, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1106348985
@@ -14062,11 +14068,39 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1141330604321284, guid: 35769a82956d4284ca8ccf9d10c84deb,
     type: 2}
   m_PrefabInternal: {fileID: 1101285960}
+--- !u!114 &2036139025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2036139024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bdb0f19f072b124583a9ae9ef64be6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  MaxHealth: 100
+  RegenHealth: 2
+  HealthNumberText: {fileID: 932670921}
 --- !u!20 &2036139030 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20704634994009654, guid: 35769a82956d4284ca8ccf9d10c84deb,
     type: 2}
   m_PrefabInternal: {fileID: 1101285960}
+--- !u!136 &2036139031
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2036139024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 0.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2038437306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 409632, guid: 471c1eb32c770a54ea8a1c3ffbda1de6,
