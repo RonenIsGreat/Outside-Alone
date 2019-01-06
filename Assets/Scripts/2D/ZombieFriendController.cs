@@ -2,19 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZombieFriendController : MonoBehaviour {
     public Transform target;
     public float engaugeDistance = 10f;
     public float moveSpeed = 5f;
     private bool isFacingLeft = true;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public Text dialogueText;
+
+
+    void Start () {
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        if (dialogueText.IsActive())
+        {
+            return;
+        }
 		if (Vector3.Distance(target.position,this.transform.position) < engaugeDistance)
         {
             Vector3 targetDirection = target.position - this.transform.position;
