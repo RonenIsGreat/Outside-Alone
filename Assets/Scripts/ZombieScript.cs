@@ -7,6 +7,7 @@ public class ZombieScript : MonoBehaviour {
     public List<Transform> waypoints = new List<Transform>();
     public Transform player;
     public float distanceToSee = 10;
+    public float dealingDamage = 30;
 
     // The waypoint currently targeted
     private Transform targetWaypoint;
@@ -18,6 +19,8 @@ public class ZombieScript : MonoBehaviour {
     private Animator zombieAnimator;
     private float walkSpeed;
     private float runSpeed;
+    private bool isAttacking;
+    private PlayerScript playerScript;
 
     // Use this for initialization
     void Start()
@@ -30,17 +33,51 @@ public class ZombieScript : MonoBehaviour {
         zombieAnimator = GetComponent<Animator>();
         walkSpeed = agent.speed;
         runSpeed = walkSpeed * 2;
+        isAttacking = false;
+        playerScript = player.GetComponent<PlayerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.position) <= distanceToSee)
+        float distanceFromPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (distanceFromPlayer <= distanceToSee)
         {
             runToTarget(player);
         }
         else if (!agent.pathPending && (agent.remainingDistance < minDistance))
+        {
             GotoNextPoint();
+        }
+
+        if (isAttacking)
+            dealDamage();
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            isAttacking = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            isAttacking = false;
+        }
+    }
+
+    private void dealDamage()
+    {
+        if (playerScript != null)
+        {
+            float damage = dealingDamage * Time.deltaTime;
+            playerScript.TakeDamage(damage);
+        }
     }
 
     void runToTarget(Transform target)
