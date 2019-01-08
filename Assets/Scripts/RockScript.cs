@@ -24,7 +24,7 @@ public class RockScript : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        TargetScript targetScript = collision.transform.GetComponent<TargetScript>();
+        ZombieScript targetScript = collision.transform.GetComponent<ZombieScript>();
 
         if (targetScript != null)
         {

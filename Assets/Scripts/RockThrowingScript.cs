@@ -68,6 +68,8 @@ public class RockThrowingScript : MonoBehaviour {
         {
             Rigidbody rockInstance;
             rockInstance = Instantiate(throwingRockPrefab, transform.position, throwingRockPrefab.rotation) as Rigidbody;
+
+
             rockInstance.AddForce(transform.forward * ThrowForce);
             decreaseRocksNumber();
         }

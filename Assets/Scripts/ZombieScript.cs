@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class ZombieScript : MonoBehaviour {
+    public float Health = 100;
+    public Transform deathExplosion;
     public List<Transform> waypoints = new List<Transform>();
     public Transform player;
     public float distanceToSee = 10;
@@ -21,6 +23,7 @@ public class ZombieScript : MonoBehaviour {
     private float runSpeed;
     private bool isAttacking;
     private PlayerScript playerScript;
+    private AudioSource painSound;
 
     // Use this for initialization
     void Start()
@@ -35,6 +38,7 @@ public class ZombieScript : MonoBehaviour {
         runSpeed = walkSpeed * 2;
         isAttacking = false;
         playerScript = player.GetComponent<PlayerScript>();
+        painSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,24 @@ public class ZombieScript : MonoBehaviour {
 
         if (isAttacking)
             dealDamage();
+    }
+
+    public void GetDamage(float damage)
+    {
+        if (damage > 0)
+        {
+            Health -= damage;
+            runToTarget(player);
+
+            if (painSound != null)
+                painSound.Play();
+
+            if (Health <= 0)
+            {
+                Instantiate(deathExplosion, transform.position + Vector3.up, transform.rotation);
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider col)
