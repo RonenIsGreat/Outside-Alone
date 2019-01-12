@@ -13,7 +13,7 @@ public class RobotController : MonoBehaviour {
     float groundRadius = 0.2f;
     public float jumpForce = 700f;
     public LayerMask groundLayer;
-    public Text dialogueText;
+    public GameObject dialogueBox;
 
     Animator animator;
 
@@ -24,7 +24,7 @@ public class RobotController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (dialogueText.IsActive())
+        if (dialogueBox.activeSelf)
         {
             return;
         }
@@ -50,7 +50,7 @@ public class RobotController : MonoBehaviour {
 
     void Update()
     {
-        if (dialogueText.IsActive())
+        if (dialogueBox.activeSelf)
         {
             return;
         }

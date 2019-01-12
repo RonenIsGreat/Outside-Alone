@@ -5,45 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ZombieFriendController : MonoBehaviour {
-    public Transform target;
-    public float engaugeDistance = 10f;
-    public float moveSpeed = 5f;
-    private bool isFacingLeft = true;
-    public Text dialogueText;
-
+    private bool isDead = false;
+    private Animator animator;
+    public GameObject dialogueBox;
 
     void Start () {
+        animator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (dialogueText.IsActive())
+        if (dialogueBox.activeSelf || isDead)
         {
             return;
         }
-		if (Vector3.Distance(target.position,this.transform.position) < engaugeDistance)
-        {
-            Vector3 targetDirection = target.position - this.transform.position;
-
-            if (Mathf.Sign(targetDirection.x) == 1 && isFacingLeft)
-            {
-                Flip();
-            } else if (Mathf.Sign(targetDirection.x) == -1 && !isFacingLeft)
-            {
-                Flip();
-            }
-        }
-        else if (Vector3.Distance(target.position, this.transform.position) < engaugeDistance)
-        {
-            Debug.DrawLine(target.position, this.transform.position, Color.green);
-        }
-	}
-
-    private void Flip()
-    {
-        isFacingLeft = !isFacingLeft;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+        animator.SetBool("IsDead", true);
+        isDead = true;
     }
 }
