@@ -931,6 +931,7 @@ GameObject:
   - component: {fileID: 82525487813759410}
   - component: {fileID: 95753857220964718}
   - component: {fileID: 114062270610277622}
+  - component: {fileID: 54499557956683186}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -2516,6 +2517,21 @@ Transform:
   m_Father: {fileID: 4968825131626264}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54499557956683186
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636289468769074}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65025349330434010
 BoxCollider:
   m_ObjectHideFlags: 1

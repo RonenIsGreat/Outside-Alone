@@ -8,7 +8,7 @@ public class ShatterOnCollisionScript : MonoBehaviour {
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.collider.CompareTag("Rock"))
+        if (col.collider.CompareTag("Rock") || col.collider.CompareTag("Zombie"))
         {
             GameObject.Instantiate(Replacement, transform.position, transform.rotation);
             Destroy(gameObject);
