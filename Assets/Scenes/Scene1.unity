@@ -2251,11 +2251,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 352882691}
   m_LocalRotation: {x: 0.87364453, y: -0, z: -0, w: 0.48656484}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 11.790014, y: 21.710606, z: -10.175266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1169842614}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 121.76999, y: -0.000015258789, z: -0.000015258789}
 --- !u!4 &355983977 stripped
 Transform:
@@ -2385,6 +2385,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1488974513}
+    - target: {fileID: 136699525832970056, guid: 5f2463cfca50bad409ed83b32ac6c522,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f2463cfca50bad409ed83b32ac6c522, type: 2}
   m_IsPrefabAsset: 0
@@ -9295,6 +9300,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 57b1c6e5e6fd80c4f8ee1d5ccba246c8,
     type: 3}
   m_PrefabInternal: {fileID: 1168776664}
+--- !u!1 &1169842613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1169842614}
+  m_Layer: 0
+  m_Name: Lighting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1169842614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1169842613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.790014, y: -18.710606, z: 10.175266}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1250289905}
+  - {fileID: 352882693}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1177347343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 409632, guid: 471c1eb32c770a54ea8a1c3ffbda1de6,
@@ -10004,11 +10039,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1250289903}
   m_LocalRotation: {x: 0.5730346, y: -0, z: -0, w: 0.81953126}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 11.790014, y: 21.710606, z: -10.175266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1169842614}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 69.924, y: 0, z: 0}
 --- !u!4 &1256579599 stripped
 Transform:
@@ -16581,6 +16616,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 429502, guid: a5b31c0f3705bb44d8ad2d28adacc898,
     type: 2}
   m_PrefabInternal: {fileID: 2014861965}
+--- !u!1 &2025607189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2025607191}
+  - component: {fileID: 2025607190}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2025607190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2025607189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb00e1f9602f93e41b1ae83ddac217d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieToKill: {fileID: 2084662359}
+--- !u!4 &2025607191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2025607189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.435966, y: -20.148481, z: 11.654198}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2027960440 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4420150727149544, guid: ab98f1498e2018f40a6365913739cdd3,

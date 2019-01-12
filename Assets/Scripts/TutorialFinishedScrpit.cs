@@ -18,7 +18,7 @@ public class TutorialFinishedScrpit : MonoBehaviour {
     private IEnumerator ChangeScene()
     {
         //Wait for 4 seconds
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(3);
     }
 

@@ -67,7 +67,7 @@ public class RockThrowingScript : MonoBehaviour {
         if(collectedRocksNumber > 0 && Input.GetMouseButtonDown(0))
         {
             Rigidbody rockInstance;
-            rockInstance = Instantiate(throwingRockPrefab, transform.position, throwingRockPrefab.rotation) as Rigidbody;
+            rockInstance = Instantiate(throwingRockPrefab, transform.position + transform.forward, throwingRockPrefab.rotation) as Rigidbody;
 
 
             rockInstance.AddForce(transform.forward * ThrowForce);
