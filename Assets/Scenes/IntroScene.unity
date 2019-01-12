@@ -659,7 +659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press Left Shift key to Continue
+  m_Text: Press Space key to Continue
 --- !u!222 &376211125
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1297,7 +1297,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 424184397}
   dialogueText: {fileID: 115681173}
-  isDialogueActive: 1
   robotArrow: {fileID: 1676684312}
   zombieArrow: {fileID: 947141159}
 --- !u!1 &833705154
@@ -1825,7 +1824,7 @@ GameObject:
   - component: {fileID: 1229607604}
   m_Layer: 0
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1985,7 +1984,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 55
-  dialogueText: {fileID: 115681173}
+  dialogueBox: {fileID: 424184397}
 --- !u!1 &1578608464
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,6 +3448,7 @@ GameObject:
   - component: {fileID: 2036545223}
   - component: {fileID: 2036545226}
   - component: {fileID: 2036545227}
+  - component: {fileID: 2036545225}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -3548,6 +3548,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0.27, y: -0.43}
   m_Size: {x: 2.81, y: 4.52}
   m_Direction: 0
+--- !u!70 &2036545225
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2036545220}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.27, y: -0.43}
+  m_Size: {x: 2.81, y: 4.52}
+  m_Direction: 0
 --- !u!114 &2036545226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3561,8 +3576,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1229607598}
   engaugeDistance: 10
-  moveSpeed: 5
-  dialogueText: {fileID: 115681173}
+  moveSpeed: 1
+  dialogueBox: {fileID: 424184397}
 --- !u!50 &2036545227
 Rigidbody2D:
   serializedVersion: 4
