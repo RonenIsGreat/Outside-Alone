@@ -10237,6 +10237,7 @@ Transform:
   - {fileID: 703837128}
   - {fileID: 1984356272}
   - {fileID: 2064189382}
+  - {fileID: 1631001991}
   m_Father: {fileID: 1751396505}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11044,7 +11045,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -11064,7 +11065,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -11078,13 +11079,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377714064}
-  m_LocalRotation: {x: 0.40821794, y: -0.23456973, z: 0.109381676, w: 0.87542605}
+  m_LocalRotation: {x: 0.4798828, y: 0.12053741, z: -0.06675998, w: 0.86644465}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 57.96, y: 15.84, z: 0}
 --- !u!1001 &1379647294
 Prefab:
   m_ObjectHideFlags: 0
@@ -13586,6 +13587,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 435462, guid: 2cfb651bea8d26240aa4aa462de9d69f,
     type: 2}
   m_PrefabInternal: {fileID: 1626457249}
+--- !u!1001 &1631001990
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1283903845}
+    m_Modifications:
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -18.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.0000004917383
+      objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.0000006565264
+      objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 194238, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_Name
+      value: Lantern_post 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 019569278ee343c4e950e1f9afe6ec4f, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1631001991 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 417190, guid: 019569278ee343c4e950e1f9afe6ec4f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1631001990}
 --- !u!1 &1633245935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1963544074100888, guid: 35769a82956d4284ca8ccf9d10c84deb,
