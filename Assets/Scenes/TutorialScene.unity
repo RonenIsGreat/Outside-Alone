@@ -751,7 +751,7 @@ MonoBehaviour:
     type: 2}
   DistanceToCollectRockFrom: 3
   maxRocksToCollect: 5
-  ThrowForce: 1500
+  ThrowForce: 1200
   UnlimitedRocks: 1
 --- !u!1001 &117736743
 Prefab:
