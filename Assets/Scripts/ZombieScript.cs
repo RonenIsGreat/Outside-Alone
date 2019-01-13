@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ZombieScript : MonoBehaviour {
     public float Health = 100;
@@ -10,6 +11,7 @@ public class ZombieScript : MonoBehaviour {
     public Transform player;
     public float distanceToSee = 10;
     public float dealingDamage = 30;
+    public Text ZombieHealthText;
 
     // The waypoint currently targeted
     private Transform targetWaypoint;
@@ -39,11 +41,13 @@ public class ZombieScript : MonoBehaviour {
         isAttacking = false;
         playerScript = player.GetComponent<PlayerScript>();
         painSound = GetComponent<AudioSource>();
+        ZombieHealthText.text = ((int)Health).ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
+        ZombieHealthText.transform.LookAt(2 * ZombieHealthText.transform.position - player.position);
         float distanceFromPlayer = Vector3.Distance(transform.position, player.position);
 
         if (distanceFromPlayer <= distanceToSee)
@@ -64,8 +68,9 @@ public class ZombieScript : MonoBehaviour {
         if (damage > 0)
         {
             Health -= damage;
+            ZombieHealthText.text = ((int)Health).ToString();
 
-            if(toChasePlayer)
+            if (toChasePlayer)
                 runToTarget(player);
 
             if (painSound != null)
