@@ -1954,7 +1954,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 305.7, y: 30}
+  m_SizeDelta: {x: 350, y: 30}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &323643470
 MonoBehaviour:
@@ -1988,7 +1988,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hold "t" to show level's goal
+  m_Text: Hold "t" to display closest target
 --- !u!222 &323643471
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8738,7 +8738,7 @@ Prefab:
     - target: {fileID: 114187724517694978, guid: 35769a82956d4284ca8ccf9d10c84deb,
         type: 2}
       propertyPath: m_RunSpeed
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114187724517694978, guid: 35769a82956d4284ca8ccf9d10c84deb,
         type: 2}
@@ -12718,6 +12718,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114269662127684800, guid: d0d2ca50ed819684e8d24c7085d990ba,
+        type: 2}
+      propertyPath: targetObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4630179245868726, guid: d0d2ca50ed819684e8d24c7085d990ba, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.06484851
@@ -12790,6 +12795,11 @@ Prefab:
       propertyPath: DisplayTargetText
       value: 
       objectReference: {fileID: 323643470}
+    - target: {fileID: 114269662127684800, guid: d0d2ca50ed819684e8d24c7085d990ba,
+        type: 2}
+      propertyPath: targetObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 2084662359}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d2ca50ed819684e8d24c7085d990ba, type: 2}
   m_IsPrefabAsset: 0

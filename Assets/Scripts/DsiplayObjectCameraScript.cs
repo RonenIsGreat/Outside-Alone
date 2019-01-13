@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class DsiplayObjectCameraScript : MonoBehaviour {
 
-    public GameObject targetObject;
+    public GameObject[] targetObjects;
     public GameObject mainCameraObject;
     public GameObject playerControllerObject;
     public Text DisplayTargetText;
@@ -18,14 +18,11 @@ public class DsiplayObjectCameraScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if(targetObject != null)
-        {
-            offset = transform.position - targetObject.transform.position;
-            mainCamera = mainCameraObject.GetComponent<Camera>();
-            displayCamera = GetComponent<Camera>();
-            walkScript = playerControllerObject.GetComponent<FirstPersonController>();
-            StartCoroutine(removeText());
-        }
+        offset = new Vector3(0, 15, -2);
+        mainCamera = mainCameraObject.GetComponent<Camera>();
+        displayCamera = GetComponent<Camera>();
+        walkScript = playerControllerObject.GetComponent<FirstPersonController>();
+        StartCoroutine(removeText());
     }
 
     private IEnumerator removeText()
@@ -37,9 +34,28 @@ public class DsiplayObjectCameraScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (targetObject != null)
+        Transform closestTarget = null;
+
+        // Get the closest target
+        foreach (var targetObject in targetObjects)
         {
-            transform.position = targetObject.transform.position + offset;
+            if (targetObject == null)
+                continue;
+
+            if (closestTarget == null)
+                closestTarget = targetObject.transform;
+            else if (Vector3.Distance(targetObject.transform.position, playerControllerObject.transform.position) <
+                     Vector3.Distance(closestTarget.position, playerControllerObject.transform.position))
+            {
+                closestTarget = targetObject.transform;
+            }
+        }
+
+        // Display the closest target
+        if (closestTarget != null)
+        {
+            transform.position = closestTarget.transform.position + offset;
+            transform.LookAt(closestTarget.transform);
 
             if (Input.GetKey(KeyCode.T))
             {

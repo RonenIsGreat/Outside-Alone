@@ -59,12 +59,14 @@ public class ZombieScript : MonoBehaviour {
             dealDamage();
     }
 
-    public void GetDamage(float damage)
+    public void GetDamage(float damage, bool toChasePlayer)
     {
         if (damage > 0)
         {
             Health -= damage;
-            runToTarget(player);
+
+            if(toChasePlayer)
+                runToTarget(player);
 
             if (painSound != null)
                 painSound.Play();
