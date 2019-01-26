@@ -9583,6 +9583,11 @@ Prefab:
       propertyPath: HealthNumberText
       value: 
       objectReference: {fileID: 932670921}
+    - target: {fileID: 114457566685163842, guid: 35769a82956d4284ca8ccf9d10c84deb,
+        type: 2}
+      propertyPath: CantPickupRockText
+      value: 
+      objectReference: {fileID: 1451360711}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
   m_IsPrefabAsset: 0

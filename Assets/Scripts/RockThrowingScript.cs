@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RockThrowingScript : MonoBehaviour {
 
     public Text PickupRockText;
+    public Text CantPickupRockText;
     public Image Crosshair;
     public Text RocksNumberText;
     public Rigidbody throwingRockPrefab;
@@ -36,30 +37,36 @@ public class RockThrowingScript : MonoBehaviour {
         RaycastHit hit;
         Color colorForCrossHair = originalCrosshairColor;
         int RayCastlayerMask = 1 << layerNumber;
-        Color displayPickupRockTextColor = Color.clear;
+        PickupRockText.color = Color.clear;
+        CantPickupRockText.color = Color.clear;
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, DistanceToCollectRockFrom, RayCastlayerMask))
         {
             if (hit.collider.CompareTag("Rock"))
             {
-                colorForCrossHair = Color.yellow;
-                displayPickupRockTextColor = Color.yellow;
                 GameObject rock = hit.collider.gameObject;
 
                 // Check if player can collect more rocks
                 if (collectedRocksNumber < maxRocksToCollect)
                 {
+                    colorForCrossHair = Color.yellow;
+                    PickupRockText.color = Color.yellow;
+
+                    // Player collects the rock
                     if (Input.GetKeyDown("e"))
                     {
                         Destroy(rock);
                         increaseRocksNumber();
                     }
                 }
+                else
+                {
+                    CantPickupRockText.color = Color.red;
+                }
             }
         }
 
         Crosshair.color = colorForCrossHair;
-        PickupRockText.color = displayPickupRockTextColor;
     }
 
     private void throwRock()
@@ -82,13 +89,10 @@ public class RockThrowingScript : MonoBehaviour {
 
     private void decreaseRocksNumber()
     {
-        collectedRocksNumber--;
-
-        if (UnlimitedRocks && collectedRocksNumber <= 0)
+        if (!UnlimitedRocks)
         {
-            collectedRocksNumber = 99;
+            collectedRocksNumber--;
+            RocksNumberText.text = collectedRocksNumber.ToString();
         }
-
-        RocksNumberText.text = collectedRocksNumber.ToString();
     }
 }

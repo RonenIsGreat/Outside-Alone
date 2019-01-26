@@ -1057,6 +1057,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 427680, guid: ffd08d298f9a9e44e9dd936fb4e3a38e,
     type: 2}
   m_PrefabInternal: {fileID: 130527202}
+--- !u!114 &142512747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114127238934039676, guid: 8b4df3fa406aee143beda0dc0c6e2da3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1038355077}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &145597055
 Prefab:
   m_ObjectHideFlags: 0
@@ -7674,7 +7680,7 @@ Transform:
   m_PrefabInternal: {fileID: 657237557}
 --- !u!114 &995313226 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114127238934039676, guid: 8b4df3fa406aee143beda0dc0c6e2da3,
+  m_CorrespondingSourceObject: {fileID: 114811639790010646, guid: 8b4df3fa406aee143beda0dc0c6e2da3,
     type: 2}
   m_PrefabInternal: {fileID: 1038355077}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -8153,11 +8159,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 224740731442983334, guid: 8b4df3fa406aee143beda0dc0c6e2da3,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 224740731442983334, guid: 8b4df3fa406aee143beda0dc0c6e2da3,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -8674,6 +8675,11 @@ Prefab:
       propertyPath: ThrowForce
       value: 1200
       objectReference: {fileID: 0}
+    - target: {fileID: 114457566685163842, guid: 35769a82956d4284ca8ccf9d10c84deb,
+        type: 2}
+      propertyPath: CantPickupRockText
+      value: 
+      objectReference: {fileID: 142512747}
     m_RemovedComponents:
     - {fileID: 114834795668410760, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
     - {fileID: 114839843397674092, guid: 35769a82956d4284ca8ccf9d10c84deb, type: 2}
