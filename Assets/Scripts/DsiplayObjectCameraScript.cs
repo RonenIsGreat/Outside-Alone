@@ -13,7 +13,6 @@ public class DsiplayObjectCameraScript : MonoBehaviour {
 
     private Camera mainCamera;
     private Camera displayCamera;
-    private FirstPersonController walkScript;
     private Vector3 offset;
 
     // Use this for initialization
@@ -21,7 +20,6 @@ public class DsiplayObjectCameraScript : MonoBehaviour {
         offset = new Vector3(0, 15, -2);
         mainCamera = mainCameraObject.GetComponent<Camera>();
         displayCamera = GetComponent<Camera>();
-        walkScript = playerControllerObject.GetComponent<FirstPersonController>();
         StartCoroutine(removeText());
     }
 
@@ -61,14 +59,12 @@ public class DsiplayObjectCameraScript : MonoBehaviour {
             {
                 mainCamera.enabled = false;
                 displayCamera.enabled = true;
-                walkScript.enabled = false;
                 DisplayTargetText.enabled = false;
             }
             else
             {
                 mainCamera.enabled = true;
                 displayCamera.enabled = false;
-                walkScript.enabled = true;
             }
         }
     }
