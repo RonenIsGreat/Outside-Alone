@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level1FinishedScript : MonoBehaviour {
+public class Level2FinishedScript : MonoBehaviour {
 
-    public GameObject zombieToKill;
+    public List<GameObject> zombiesToDestroy = new List<GameObject>();
 
     // Update is called once per frame
     void Update()
     {
-        if (isZombieKilled())
+        if (areAllzombiesDestroyed())
         {
             StartCoroutine(ChangeScene());
         }
@@ -20,13 +20,16 @@ public class Level1FinishedScript : MonoBehaviour {
     {
         //Wait a second
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 
-    private bool isZombieKilled()
+    private bool areAllzombiesDestroyed()
     {
-        if (zombieToKill != null)
-            return false;
+        foreach (var zombie in zombiesToDestroy)
+        {
+            if (zombie != null)
+                return false;
+        }
 
         return true;
     }
