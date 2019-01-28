@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
@@ -47,6 +48,6 @@ public class PlayerScript : MonoBehaviour {
 
     private void playerDied()
     {
-        // TODO (game over scene? restart lvl)
+        SceneManager.LoadScene(6);
     }
 }
